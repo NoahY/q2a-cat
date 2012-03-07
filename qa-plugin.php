@@ -19,7 +19,7 @@
                         exit;   
         }               
 
-        //qa_register_plugin_module('module', 'qa-cat-admin.php', 'qa_cat_admin', 'Recategorizer Admin');
+        qa_register_plugin_module('module', 'qa-cat-admin.php', 'qa_cat_admin', 'Categorizer Admin');
         
         qa_register_plugin_layer('qa-cat-layer.php', 'Recategorizer Layer');
        
