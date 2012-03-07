@@ -16,7 +16,8 @@
 			$qa_content['form']['fields'] = array();
 			
 			$posts = qa_db_query_sub(
-				"SELECT BINARY title as title, postid FROM ^posts WHERE type='Q' AND categoryid IS NULL"
+				"SELECT BINARY title as title, postid FROM ^posts WHERE type='Q' AND categoryid IS NULL LIMIT #",
+				qa_opt('categories_plugin_limit')
 			);
 			
 			$count = 0;
