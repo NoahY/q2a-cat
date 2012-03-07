@@ -1,5 +1,5 @@
 <?php
-	class qa_categories_admin {
+	class qa_cat_admin {
 
 		function option_default($option) {
 			
