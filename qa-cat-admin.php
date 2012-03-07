@@ -27,6 +27,8 @@
 				if (qa_clicked('categories_plugin_process')) {
 			
 					qa_opt('categories_plugin_limit',(int)qa_post_text('categories_plugin_limit'));
+
+					$ok = qa_lang('admin/options_saved');
 				}
 				else if (qa_clicked('categories_plugin_reset')) {
 					foreach($_POST as $i => $v) {
@@ -53,7 +55,7 @@
 			 
 				'buttons' => array(
 					array(
-						'label' => 'Process',
+						'label' => qa_lang_html('admin/save_options_button'),
 						'tags' => 'NAME="categories_plugin_process"',
 					),
                     array(
