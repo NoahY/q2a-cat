@@ -23,7 +23,7 @@
 			$count = 0;
 			while ( ($post=qa_db_read_one_assoc($posts,true)) !== null ) {
 				$qa_content['form']['fields']['cat_'.$count] = array(
-					'label' => 'Move <a href="'.qa_q_path_html($post['postid'], $post['title']).'" title="'.substr($post['content'],0,200).'">'.$post['title'].'</a> to:',
+					'label' => 'Move <a href="'.qa_q_path_html($post['postid'], $post['title']).'" title="'.qa_html(substr($post['content'],0,200)).'">'.$post['title'].'</a> to:',
 					'loose' => true,
 				);
 				qa_set_up_category_field($qa_content, $qa_content['form']['fields']['cat_'.$count], 'cat_'.$count, $categories, @$editcategory['categoryid'], qa_opt('allow_no_category'), qa_opt('allow_no_sub_category'));
