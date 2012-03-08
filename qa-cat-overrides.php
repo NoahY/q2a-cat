@@ -5,7 +5,7 @@
 		
 		$requestlower=strtolower(qa_request());
 		
-		if($requestlower == 'admin/categories' && qa_get('categorize')) {
+		if(qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN && $requestlower == 'admin/categories' && qa_get('categorize')) {
 			
 			$editcategoryid=qa_post_text('edit');
 			if (!isset($editcategoryid))

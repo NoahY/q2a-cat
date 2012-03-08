@@ -26,6 +26,7 @@
 				
 				if (qa_clicked('categories_plugin_process')) {
 			
+					qa_opt('category_plugin_enable',(bool)qa_post_text('category_plugin_enable'));
 					qa_opt('categories_plugin_limit',(int)qa_post_text('categories_plugin_limit'));
 
 					$ok = qa_lang('admin/options_saved');
@@ -41,6 +42,13 @@
 				
 			$fields = array();
 			
+			$fields[] = array(
+				'label' => 'Enable Categorizer',
+				'tags' => 'NAME="category_plugin_enable"',
+				'note' => 'replaces the link at admin/categories for questions without categories',
+				'value' => qa_opt('category_plugin_enable'),
+				'type' => 'checkbox',
+			);
 			$fields[] = array(
 				'label' => 'Max number of posts to recategorize at once',
 				'tags' => 'NAME="categories_plugin_limit"',

@@ -4,8 +4,8 @@
 		
 		function doctype() {
 			qa_html_theme_base::doctype();
-			if($this->request == 'admin/categories') {
-				if(qa_clicked('categorize_plugin_save')) {
+			if(qa_opt('category_plugin_enable') && $this->request == 'admin/categories') {
+				if(qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN && qa_clicked('categorize_plugin_save')) {
 					$cnt = 0;
 					while(qa_post_text('cat_'.$cnt.'_id')) {
 						$cnt2 = 1;
