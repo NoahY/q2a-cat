@@ -15,6 +15,20 @@
 			$categories=qa_db_select_with_pending(qa_db_category_nav_selectspec($editcategoryid, true, false, true));
 			$qa_content['form']['fields'] = array();
 			
+			$postcount = qa_db_read_one_value(
+				qa_db_query_sub(
+					"SELECT COUNT(postid) FROM ^posts WHERE type='Q' AND categoryid IS NULL"
+				), true
+			);
+			
+
+			$ctxt = '1 - '.qa_opt('categories_plugin_limit').' of '.$postcount.' uncategorized posts:';
+			
+			$qa_content['form']['fields'][] = array(
+				'type' => 'static',
+				'value' => $ctxt,
+			);
+			
 			$posts = qa_db_query_sub(
 				"SELECT BINARY title as title, BINARY content as content, postid FROM ^posts WHERE type='Q' AND categoryid IS NULL LIMIT #",
 				qa_opt('categories_plugin_limit')
