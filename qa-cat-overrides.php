@@ -22,7 +22,7 @@
 			);
 			
 
-			$ctxt = '1 - '.($postcount>qa_opt('categories_plugin_limit')?qa_opt('categories_plugin_limit'):$postcount).' of '.$postcount.' uncategorized posts:';
+			$ctxt = '<i>showing 1 - '.($postcount>qa_opt('categories_plugin_limit')?qa_opt('categories_plugin_limit'):$postcount).' of '.$postcount.' uncategorized posts:</i>';
 			
 			$qa_content['form']['fields'][] = array(
 				'type' => 'static',
