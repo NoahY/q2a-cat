@@ -3,7 +3,7 @@
 /*              
         Plugin Name: Categorizer
         Plugin URI: https://github.com/NoahY/q2a-cat
-        Plugin Update Check URI: https://github.com/NoahY/q2a-cat/raw/master/qa-plugin.php
+        Plugin Update Check URI: https://raw.github.com/NoahY/q2a-cat/master/qa-plugin.php
         Plugin Description: Allows individual categorizing of uncategorized questions
         Plugin Version: 0.2
         Plugin Date: 2012-03-07
