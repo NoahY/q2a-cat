@@ -46,11 +46,11 @@
 			}
 			
 			$qa_content['form']['buttons'] = array(
-				array(
+				'save' => array(
 					'label' => qa_lang_html('admin/save_options_button'),
 					'tags' => 'NAME="categorize_plugin_save"',
 				),
-				array(
+				'cancel' => array(
 					'label' => qa_lang_html('main/cancel_button'),
 					'tags' => 'NAME="categorize_plugin_cancel"',
 				),

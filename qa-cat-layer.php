@@ -20,8 +20,8 @@
 					);
 					qa_redirect(qa_request(), (int)$uncat?array('recalc' => 1,'categorize' => 'true'):array('recalc' => 1));
 				}
-				else if(false && isset($this->content['form']['fields']['allow_no_category']['error']))
-					$this->content['form']['fields']['allow_no_category']['error'] = preg_replace('/HREF="[^"]*"/','HREF="'.qa_path_html(qa_request(),array('categorize'=>'true')).'"',$this->content['form']['fields']['allow_no_category']['error']);
+				else if(isset($this->content['form']['fields']['allow_no_category']['error']))
+					$this->content['form']['fields']['allow_no_category']['error'] = preg_replace('/href="[^"]*"/','href="'.qa_path_html(qa_request(),array('categorize'=>'true')).'"',$this->content['form']['fields']['allow_no_category']['error']);
 			}
 		}
 	}
