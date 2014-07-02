@@ -5,7 +5,7 @@
 		
 		$requestlower=strtolower(qa_request());
 		
-		if(qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN && $requestlower == 'admin/categories' && (qa_get('missing') || qa_get('categorize'))) {
+		if(qa_get_logged_in_level()>=QA_USER_LEVEL_ADMIN && $requestlower == 'admin/categories' && qa_get('categorize')) {
 			
 			$editcategoryid=qa_post_text('edit');
 			if (!isset($editcategoryid))
@@ -46,11 +46,11 @@
 			}
 			
 			$qa_content['form']['buttons'] = array(
-				array(
+				'save' => array(
 					'label' => qa_lang_html('admin/save_options_button'),
 					'tags' => 'NAME="categorize_plugin_save"',
 				),
-				array(
+				'cancel' => array(
 					'label' => qa_lang_html('main/cancel_button'),
 					'tags' => 'NAME="categorize_plugin_cancel"',
 				),
